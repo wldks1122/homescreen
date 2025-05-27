@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>시그니처 바로가기</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#007BFF" />
+  <meta name="mobile-web-app-capable" content="yes" />
+</head>
+<body style="text-align: center; font-family: sans-serif; padding: 40px;">
+  <h2>📲 홈화면에 바로가기 설치</h2>
+  <p>처음 방문하신 분이라면<br>홈화면에 추가하시면 더 빠르게 접속하실 수 있어요!</p>
+  <button id="install-btn" style="display:none; padding: 12px 24px; font-size: 16px;">👉 홈화면에 설치하기</button>
+
+  <script>
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      document.getElementById('install-btn').style.display = 'inline-block';
+
+      document.getElementById('install-btn').addEventListener('click', () => {
+        deferredPrompt.prompt();
+      });
+    });
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
