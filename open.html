@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>삼성인터넷으로 열기</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body style="font-family:sans-serif; text-align:center; padding:40px;">
+  <h2>📲 브라우저 열기 중...</h2>
+  <p>삼성인터넷으로 이동 중입니다. 자동으로 열리지 않으면 아래 버튼을 눌러주세요.</p>
+  <a href="intent://signature645o.com/#Intent;scheme=https;package=com.sec.android.app.sbrowser;end;" style="font-size:18px; display:inline-block; margin-top:20px; padding:12px 24px; background:#007BFF; color:#fff; border-radius:8px;">삼성인터넷으로 열기</a>
+
+  <script>
+    const ua = navigator.userAgent.toLowerCase();
+    const isAndroid = ua.includes("android");
+    const isKakao = ua.includes("kakaotalk");
+
+    if (isAndroid && isKakao) {
+      location.href = "intent://signature645o.com/#Intent;scheme=https;package=com.sec.android.app.sbrowser;end;";
+    } else {
+      location.href = "https://signature645o.com/";
+    }
+  </script>
+</body>
+</html>
