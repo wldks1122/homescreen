@@ -2,7 +2,6 @@
 {
   "name": "시그니처 바로가기",
   "short_name": "시그니처",
-  "start_url": "/login",
   "start_url": "https://signature645o.com/login",
   "display": "standalone",
   "background_color": "#ffffff",
